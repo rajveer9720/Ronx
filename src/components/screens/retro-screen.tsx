@@ -13,11 +13,26 @@ import { authorData } from '@/data/static/author';
 import ComparisonChart from '@/components/ui/chats/retro-comparision-chart';
 import Profile from '@/components/profile/profile';
 import Avatar from '@/components/ui/avatar';
+import { Header } from '@/layouts/minimal/components/Header'
+
+
 export default function RetroScreen() {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
+  const handleRegistrationClick = () => {
+      setIsRegistrationOpen(true); // Open registration modal
+  };
+
+  const handleCloseRegistration = () => {
+      setIsRegistrationOpen(false); // Close registration modal
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
 
+
     <div className="relative h-36 w-full overflow-hidden rounded-lg sm:h-44 md:h-64 xl:h-80 2xl:h-96 3xl:h-[448px]">
+    <Header  />
       <Image
         src={authorData?.cover_image?.thumbnail}
         placeholder="blur"

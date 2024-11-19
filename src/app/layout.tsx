@@ -12,6 +12,7 @@ import ModalsContainer from '@/components/modal-views/container';
 import DrawersContainer from '@/components/drawer-views/container';
 import SettingsButton from '@/components/settings/settings-button';
 import SettingsDrawer from '@/components/settings/settings-drawer';
+import { Header } from '@/layouts/minimal/components/Header';
 // Import base CSS files
 import 'overlayscrollbars/overlayscrollbars.css';
 import 'swiper/css';
@@ -49,6 +50,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* WalletProvider wraps SmartContractProvider to make them available globally */}
               <WalletProvider>
                 <SmartContractProvider>
+                  {/* Header component */}
+               
                   {/* Settings and UI components */}
                   <SettingsButton />
                   <SettingsDrawer />
@@ -59,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </Suspense>
                   {/* Main content */}
                   {children}
+        
                 </SmartContractProvider>
               </WalletProvider>
             </WagmiConfig>
