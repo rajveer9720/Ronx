@@ -10,7 +10,7 @@ interface RegistrationSectionProps {
 const RegistrationSection: React.FC<RegistrationSectionProps> = ({ onClose }) => {
   
   const handleRegisterBUSD = () => {
-    window.location.href = 'http://localhost:3000/authentication/sign-up'; // Replace with your desired URL
+    window.location.href = 'http://localhost:3001/authentication/sign-up'; // Replace with your desired URL
   };
   
   return (
