@@ -27,22 +27,22 @@ export default function Sidebar({ className }: { className?: string }) {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      try {
-        const response = await fetch('/api/users');
-        const data = await response.json();
-        console.log("Fetched Data:", data);
+      // try {
+      //   const response = await fetch('/api/users');
+      //   const data = await response.json();
+      //   console.log("Fetched Data:", data);
 
-        if (data && data.length > 0) {
-          // Assuming the data is an array of users, we fetch the first user for display
-          const user = data[0];
-          setusername(user?.username);
-        }
-      } catch (error) {
-        console.error('Error fetching users:', error);
-        setError('Failed to fetch users');
-      } finally {
-        setLoading(false);
-      }
+      //   if (data && data.length > 0) {
+      //     // Assuming the data is an array of users, we fetch the first user for display
+      //     const user = data[0];
+      //     setusername(user?.username);
+      //   }
+      // } catch (error) {
+      //   console.error('Error fetching users:', error);
+      //   setError('Failed to fetch users');
+      // } finally {
+      //   setLoading(false);
+      // }
     };
 
     fetchUsers();

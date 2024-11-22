@@ -35,7 +35,9 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, increase }) => {
 };
 
 const Dashboard: React.FC = () => {
-  const { userX3Matrix, users, getUserIdsWalletaddress, getTeamSizeData, usersActiveX3Levels,usersActiveX4Levels, getTotalCycles,getPartnerCount } = useSmartContract();
+  const { userX3Matrix, users, getUserIdsWalletaddress, getTeamSizeData, 
+    usersActiveX3Levels,usersActiveX4Levels, 
+    getTotalCycles,getPartnerCount,  } = useSmartContract();
   const address = useWallet();
   console.log("address:", address);
 
@@ -111,7 +113,7 @@ const [activeLevelsX4, setActiveLevelsX4] = useState<boolean[]>(Array(12).fill(f
         setUserData(data);
         setError(null); // Clear error if successful
       } else {
-        setError("Failed to fetch user data.");
+        setError(" ");
       }
     } catch (err) {
       console.error("Error fetching user data:", err);
@@ -332,7 +334,7 @@ const userEarningsRatio = totalInvestment > 0
           />
           <StatCard title="Team" value={teamSize} increase="↑ 0" />
           <StatCard title="Ratio" value={`${userEarningsRatio}%`} increase="↑ 0%" />
-          <StatCard title="Profits" value={totalRevenue} increase="↑ 0" />
+          <StatCard title="Profits" value={totalRevenue.toString()} increase="↑ 0" />
         </>
       ) : (
         <div>Loading user data...</div>
